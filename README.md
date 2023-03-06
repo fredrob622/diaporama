@@ -2,8 +2,8 @@
 ----------------------------------------------------------------------------------------------
 Le but: faire un diaporama en nodeJS
 
-Entrer un répertoire contenant des photos.
-Le nombre de photos dans le répertoire est aléatoire.
+Entrer un répertoire contenant des photos.  
+Le nombre de photos dans le répertoire est aléatoire.  
 L'orientation des photos peut être verticale ou horizontal.
 ----------------------------------------------------------------------------------------------
 1. # initialisation du projet
