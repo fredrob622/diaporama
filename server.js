@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
     res.send(`Hello World! vous êtes sur localhost et le port ${process.env.PORT} => URL http://localhost:3000/ !`)
   });
 
-// Le serveur écoute les requêtes sur le port process.env.PORT  (3000)
+// Le serveur écoute les requêtes sur le port process.env.PORT  (5005)
 app.listen(process.env.PORT, () => {
     console.log(`Express Application exemple à l'écoute sur le port ${process.env.PORT}!`)
  });
