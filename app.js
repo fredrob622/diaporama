@@ -19,14 +19,22 @@ app.set('views', 'IHM');
 
 const rechercheLieu = require("./routes/rechercheLieu");
 const creationRepThumb = require("./routes/creationRepThumb");
+const copyFileThumb = require("./routes/copyFileThumb");
+const copyFileThumb2 = require("./routes/copyFileThumb2");
+const visuRepThumb = require("./routes/visuRepThumb")
+const diapo = require("./routes/diapo");
 
 // configuration du middleware
 // Définition des rechercheLieu routes 
-// Chaque app.use(middleware) est appelée à chaque fois qu'une requête est envoyée au serveur.
+// app.use(middleware) est appelée à chaque fois qu'une requête est envoyée au serveur.
 // utiliser app.use() sans spécifier l'URL de la requête. Dans un tel cas, ce qu'il fait, 
 // c'est qu'il est exécuté à chaque fois, quelle que soit l'URL qui a été touchée.
 
 app.use(rechercheLieu);
 app.use(creationRepThumb);
+app.use(copyFileThumb);
+app.use(copyFileThumb2);
+app.use(visuRepThumb);
+app.use(diapo);
 
 module.exports = app;

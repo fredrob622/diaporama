@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diapo</title>
+</head>
+    <link rel="stylesheet" href="/diapo_aff.css">
+    <script type="text/JavaScript" src="/js/diapo_aff.js"></script>
+<body>
+
+<div class="container">
+<!-- Structure HTML du diaporama -->
+    <div class="menu-btn-diapo">
+        <h1><%= nomVille%></h1>
+        <h2>Automatique</h2>
+        <br>
+        <button id="action-start" onclick="demarrer()">Start</button>  
+        <br><br>
+        <button id="action-pause" onclick="razDiapo()">Reset</button>
+        <br><br>
+        <button id="action-tempo" onclick="setTempo()">Tempo</button>
+        <br><br>
+        <!-- <h2>Manuel</h2>
+        <br>
+        <button id="action-manuel" onclick="setManuel()">Manuel</button> -->
+    </div>
+    <div class="slideshow">
+        <div class="slideshow-images">
+         
+        <% for (var i = 0; i < imgTab.length; i++) { %>
+            
+            <div class="slideshow-image-container">
+                
+                <img src="<%= imgTab[i] %>" alt="<%= nomVille%><%= i + 1 %>" class="slideshow-image">
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+        <% } %>
+        
+        </div>
+    </div>
+</div>  
+
+  
+  JavaScript pour le diaporama
+  <script>
+    // Récupérer les images depuis Node.js (exemple avec un tableau d'URLs d'images)
+    const imgTab = <%- JSON.stringify(imgTab) %>;
+  
+    // Variables pour le diaporama
+    let currentIndex = -1;
+    var tempo = 2000;
+    var diapoRun = true;
+    const slideshowImages = document.querySelector('.slideshow-images');
+
+    // retour au début du diporama
+    function razDiapo(){
+        diapoRun = true;
+        currentIndex = 0;
+        slideshowImages.style.transform = `translateX(-${currentIndex * 100}%)`;
+    };
+    
+    // Régler la temporisation
+    function setTempo(){
+        tempo = prompt("Entrer l'intervalle entre 2 photos en seconde: ")
+        tempo = tempo * 1000;
+    }; 
+
+    // Démarrage du diaporama
+    function startDiapo(){       
+        // Lancer le diaporama
+        intervalID = setInterval(changeImage, tempo); // Délai en mili-secondes entre chaque image  
+    };
+
+    // Fonction pour changer d'image
+    function changeImage() {
+      currentIndex++;
+      if (currentIndex === imgTab.length) {
+        currentIndex = 0;
+      }
+      slideshowImages.style.transform = `translateX(-${currentIndex * 100}%)`;
+    };
+
+    // Mise en pause (Arrêt) du diaporama
+    function demarrer(){
+        if(diapoRun){
+            // demarrer le diaporama
+            startDiapo();
+            document.getElementById("action-start").innerHTML = "Pause";
+        } else {
+            // met en pause le diaporama
+            clearInterval(intervalID);
+            document.getElementById("action-start").innerHTML = "Start";
+        }
+        diapoRun = !diapoRun;
+    };
+
+    var slideIndex = 0;    
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+        };
+
+    showSlides(slideIndex);
+
+    function showSlides(n) {
+        var j;
+        var slides = document.getElementsByClassName("slideshow-images");
+            
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+            for (j= 0; j < slides.length; j++) {
+                changeImage()
+            }
+        };
+
+    function plusSlides(n) {    
+        if (n > 0) {
+            console.log(`currentIndex " ${currentIndex}`);
+            currentIndex = currentIndex + n ;
+            slideshowImages.style.transform = `translateX(-${currentIndex * 100}%)`;
+            }
+        else{
+            if(currentIndex > 0){
+                currentIndex = currentIndex + n ;
+                slideshowImages.style.transform = `translateX(-${currentIndex * 100}%)`;
+                }
+            }
+        } 
+  </script>
+  </body>
+  </html>
+  

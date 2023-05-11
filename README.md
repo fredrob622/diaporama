@@ -355,6 +355,17 @@ L'orientation des photos peut être verticale ou horizontal.
 		  affichage de la photo thumbernail ( hoover nom de la photo apparait)
 
           affichage du formulaire de saisie 
+
+	## la route diapo2: 
+	------------------
+		dans app
+			const diapo2 = require("./routes/diapo2");
+			app.use(diapo2) // app.use(middleware) est appelée à chaque fois qu'une requête   
+							// est envoyée au serveur.
+
+
+
+	Créatioon de ./routes/diapo2
 		
 		
 	

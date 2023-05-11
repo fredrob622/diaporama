@@ -3,15 +3,9 @@ const fs = require('fs');
 const sharp = require('sharp');
 
 // Declaration
-<<<<<<< HEAD
 const dirSrc = "../public/images/Osaka"  // définition du répertoire source
 const newName = dirSrc.substring(dirSrc.lastIndexOf("/"),dirSrc.length);
 const newDirName = dirSrc.substring(0,dirSrc.lastIndexOf("/")) + newName + "_thumb";
-=======
-const dirSrc = "./public/02Osaka"  // définition du répertoire source
-const newName = dirSrc.substring(dirSrc.lastIndexOf("/")+3,dirSrc.length);
-const newDirName = dirSrc.substring(0,dirSrc.lastIndexOf("/")+3) + newName + "_thumb";
->>>>>>> e7e97612d29f60493d8675cbbea168f302eee5a7
 console.log(newName,newDirName);
 
 let ville = newName;
@@ -146,11 +140,7 @@ function orientationPhoto(repDest,files){
 // Récupération des fichiers de dirSrc dans le tableau 
 tabListeNamePhotos = ListFilesInDir(dirSrc);
 // Création du répertoire ***_thumb
-<<<<<<< HEAD
 createDir(newDirName);
-=======
-// createDir(newDirName);
->>>>>>> e7e97612d29f60493d8675cbbea168f302eee5a7
 // Création du nom des photos ville***.jpeg
 tabListeNewNamePhotos = createNewNamePhoto(ville, tabListeNamePhotos);
 
@@ -158,11 +148,7 @@ console.log(tabListeNamePhotos, tabListeNewNamePhotos);
 
 // console.log(tabListeNamePhotos[0], tabListeNewNamePhotos[0]);
 
-<<<<<<< HEAD
 copieFichier(dirSrc,newDirName,tabListeNamePhotos,tabListeNewNamePhotos);
-=======
-// copieFichier(dirSrc,newDirName,tabListeNamePhotos,tabListeNewNamePhotos);
->>>>>>> e7e97612d29f60493d8675cbbea168f302eee5a7
 
 convertInThumbnerNail(dirSrc,newDirName,tabListeNamePhotos,tabListeNewNamePhotos);
 

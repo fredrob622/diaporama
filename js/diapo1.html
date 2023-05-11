@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>diapo1</title>
+</head>
+<body>
+    <img name="diapo" width="500" height="300">
+    <script>
+        var images=[];
+        images[0]="image1.jpg";
+        images[1]="image2.jpg";
+        images[2]="image3.jpg";
+        images[3]="image4.jpg";
+        images[4]="image5.jpg";
+        const i=0;
+        const timer=3000;
+
+        function changerImage(){
+            document.diapo.src=images[i];
+            if(i<images.length-1){
+                i++;
+            }
+            else{
+                i=0;
+            }
+            // on change d'immage après l'expiration du timer
+            setTimeout("changerImage",timer);
+        }
+        window.onload=changerImage;
+    </script>
+    
+</body>
+</html>

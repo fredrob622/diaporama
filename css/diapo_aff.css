@@ -1,0 +1,120 @@
+/* <!-- CSS pour le diaporama --> */
+body {
+    height: 20%;
+    background-color: #708090;
+    display: flex;
+    margin: auto;
+}
+
+.container{
+    margin: auto;
+    display: flex;
+}
+
+.menu-btn-diapo{
+    width: 200px;    
+    padding-top: 50px;
+    background-color: #708890;  
+}
+
+.menu-btn-diapo h1{
+    text-decoration: underline;
+    font-size: 45px;
+}
+
+.menu-btn-diapo h2{
+    color: black;
+    text-decoration: underline;
+    text-align: center;
+    padding: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: #3498DB;
+    border-radius: 50px;
+    font-family: 'Pacifico', cursive;
+}
+
+.menu-btn-diapo button {
+    width: 140px;
+    padding-left: 5px;
+    margin-left: 20px;
+    border-radius: 10px;
+    font-family: 'Pacifico', cursive;
+    font-size: 25px;
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #3498DB;
+    border-bottom: 5px solid #2980B9;
+    text-shadow: 0px -2px #2980B9;
+    transition: all 0.1s;
+    -webkit-transition: all 0.1s;
+}
+
+
+.action-button:active {
+    transform: translate(0px,5px);
+    -webkit-transform: translate(0px,5px);
+    border-bottom: 1px solid;
+}
+
+.slideshow {
+width: 1300px;
+height:1300px; /* Modifier la hauteur selon vos besoins */
+overflow: hidden;
+position: relative;
+border: 1rem solid;
+align-items: center;
+justify-content: center;
+background-color: #000000;
+}
+
+.slideshow-images {
+display: flex;
+transition: transform 0.5s ease-in-out;
+align-items: center; 
+text-align: center;   
+}
+
+.slideshow-image-container {
+flex: 0 0 100%;
+position: relative;
+height: 100%;
+overflow: hidden;
+}
+
+.slideshow-image {
+width: 60%; /* Redimensionner les images à 20% de leur taille d'origine */
+height: auto; /* Hauteur ajustée automatiquement pour conserver l'aspect ratio */
+object-fit: cover; /* contain; /* Ajuster l'affichage de l'image pour conserver l'orientation */
+/* object-position: center center; Centrer l'image dans son conteneur */
+margin: auto;
+}
+
+/* Style pour les boutons de navigation du diaporama */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}

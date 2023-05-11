@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RechercheLieu</title>
+    <title>AfficheThumb</title>
     <link rel="stylesheet" href="/general.css">
 	<link rel="stylesheet" href="/recherche.css">
     <link rel="stylesheet" href="/grid.css">
@@ -26,7 +26,9 @@
                 %> 
                 <a class="location-title" href="#"><%= picName %></a>
                 <div class="location-image">
-                    <a href="#"><img width="100" height="auto" src="<%= tabListeNamePhotos[i] %>" alt="<%= picName %>"></a>
+                    <!-- <a href="#"><img width="100" height="auto" src="<%= tabListeNamePhotos[i] %>" alt="<%= picName %>"></a> -->
+                    <!-- <a href="#"><img width="100" height="auto" src="<%= `/${nameVille}_thumb/Osaka001.JPG` %>" alt="<%= picName %>"></a> -->
+                    <a href="#"><img width="100" height="auto" src="<%= `/${nameVille}_thumb/${tabListeNamePhotos[i]}` %>" alt="<%= picName %>"></a>
                 </div>
             
             </article>

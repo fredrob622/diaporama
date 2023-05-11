@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" media="screen" type="text/css" href="../css/adresse_api.css"/>
+    <script type="text/javascript" src="js/diaporama.js"></script>
     <title>Diaporama</title>
 </head>
 <body>
@@ -18,13 +19,20 @@
         <br><br>
         <button onclick="window.location.href = 'http://localhost:5000/api/galerie2';">Galerie2</button>
         <br><br>
-        <button onclick="window.location.href = 'http://localhost:5000/api/visurepthumb';">Voir répertoire Thumb</button>
+        <button onclick="window.location.href = 'http://localhost:5005/api/visuRepThumb';">Voir répertoire Thumb</button>
     </div>
         <br><br><br><br>
     <h2>Partie Admin</h2>
     <br><br>
     <div class="class_kanji">
         <button onclick="window.location.href = 'http://localhost:5005/api/creationRepThumb';">Creation Rep Thumb</button>
+        <br><br>
+        <button onclick="window.location.href = 'http://localhost:5005/api/copyFileThumb';">Copie dans Rep Thumb</button>
+        <br><br>
+        <button onclick="window.location.href = 'http://localhost:5005/api/copyFileThumb2';">Copie2 dans Rep Thumb</button>
+        <br><br>
+        // <button onclick="diapo()">diaporama</button>
+        <button onclick="window.location.href = 'http://localhost:5005/api/diapo';">diapo</button>
         <br><br>
     </div>
 </body>

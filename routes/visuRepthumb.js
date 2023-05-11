@@ -12,7 +12,7 @@ router.use(express.static('js'));
 router.use(express.static('public/images'));
 
 const path = require('path');
-console.log(__dirname);
+//console.log(__dirname); D:\prog-nodeJS\diaporama\routes
 
 // La __dirname variable renvoie toujours le chemin absolu de l'emplacement de vos fichiers.
 router.get('/api/visurepthumb', (req, res, next) => { 
@@ -20,7 +20,7 @@ router.get('/api/visurepthumb', (req, res, next) => {
 });
 
 
-router.post('/api/rechercheLieu', function(req, res, next) {
+router.post('/api/visurepthumb', function(req, res, next) {
     if (req) {
         let dirVil      =    req.body.nom_vil ;
         let nameVille   = dirVil;
@@ -36,6 +36,30 @@ router.post('/api/rechercheLieu', function(req, res, next) {
             });
             return array;
         }
+
+        function createNewNamePhoto(town, tabFiles){
+
+            let index = 0;
+            let array = [];
+            for (file in tabFiles) {
+        
+                // incrémentation de l'index
+                index++;      
+                if (index < 10) {
+                    newNamePhoto = `${town}` + "00" +  `${index}` + ".JPG";
+                    // console.log("Photo:" + newNamePhoto); 
+                    array.push(newNamePhoto);
+                } else if ( index < 100) {
+                    newNamePhoto = `${town}` + "0" +  `${index}`+ ".JPG";
+                    // console.log("Photo:" + newNamePhoto); 
+                    array.push(newNamePhoto);
+                } else {
+                    newNamePhoto = `${town}` +  `${index}`;
+                    // console.log("Photo:" + newNamePhoto); 
+                }
+            }  
+            return(array) 
+        };
         
         //let tabListeDirPhotos = [];
         tabListeNamePhotos = ListFilesInDir(dirVil,nameDirVil);
